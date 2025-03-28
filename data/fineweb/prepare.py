@@ -63,3 +63,6 @@ if __name__ == "__main__":
             idx += len(arr_batch)
         arr.flush()
 
+    # train.bin is ~22GB, val.bin ~8.5MB
+    # train has ~11B tokens (11,774,429,883)
+    # val has ~5.9M tokens (5,908,112)

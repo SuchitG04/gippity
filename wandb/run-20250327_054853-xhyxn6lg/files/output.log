@@ -1,0 +1,177 @@
+step 0: train loss 10.4730, val loss 10.4725
+iter 0: loss 10.4731, time 63807.02ms, mfu -100.00%
+iter 1: loss 10.4051, time 4080.08ms, mfu -100.00%
+iter 2: loss 10.2530, time 5123.96ms, mfu -100.00%
+iter 3: loss 10.1043, time 5139.71ms, mfu -100.00%
+iter 4: loss 10.0002, time 5140.07ms, mfu -100.00%
+iter 5: loss 9.8887, time 5157.99ms, mfu 8.20%
+iter 6: loss 9.8317, time 5178.93ms, mfu 8.20%
+iter 7: loss 9.7526, time 5213.31ms, mfu 8.19%
+iter 8: loss 9.6873, time 5232.78ms, mfu 8.18%
+iter 9: loss 9.6478, time 5248.27ms, mfu 8.17%
+iter 10: loss 9.5962, time 5259.99ms, mfu 8.15%
+iter 11: loss 9.5770, time 5299.69ms, mfu 8.14%
+iter 12: loss 9.5219, time 5308.39ms, mfu 8.12%
+iter 13: loss 9.4727, time 5336.29ms, mfu 8.10%
+iter 14: loss 9.4087, time 5349.33ms, mfu 8.08%
+iter 15: loss 9.3349, time 5356.37ms, mfu 8.06%
+iter 16: loss 9.2518, time 5360.15ms, mfu 8.05%
+iter 17: loss 9.2141, time 5376.51ms, mfu 8.03%
+iter 18: loss 9.1357, time 5381.39ms, mfu 8.01%
+iter 19: loss 9.0159, time 5395.03ms, mfu 7.99%
+step 20: train loss 8.9777, val loss 8.9751
+saving checkpoint to out
+iter 20: loss 8.9688, time 45747.47ms, mfu 7.29%
+iter 21: loss 8.8940, time 5359.16ms, mfu 7.35%
+iter 22: loss 8.8337, time 5370.19ms, mfu 7.40%
+iter 23: loss 8.7071, time 5364.20ms, mfu 7.45%
+iter 24: loss 8.6533, time 5367.06ms, mfu 7.49%
+iter 25: loss 8.5415, time 5393.94ms, mfu 7.53%
+iter 26: loss 8.5337, time 5407.30ms, mfu 7.56%
+iter 27: loss 8.4159, time 5400.12ms, mfu 7.58%
+iter 28: loss 8.2996, time 5402.83ms, mfu 7.61%
+iter 29: loss 8.2526, time 5416.28ms, mfu 7.63%
+iter 30: loss 8.1328, time 5400.88ms, mfu 7.65%
+iter 31: loss 8.0619, time 5412.96ms, mfu 7.67%
+iter 32: loss 8.0116, time 5402.42ms, mfu 7.68%
+iter 33: loss 7.9019, time 5419.13ms, mfu 7.69%
+iter 34: loss 7.8517, time 5418.44ms, mfu 7.71%
+iter 35: loss 7.7808, time 5438.17ms, mfu 7.71%
+iter 36: loss 7.7242, time 5436.98ms, mfu 7.72%
+iter 37: loss 7.6160, time 5419.76ms, mfu 7.73%
+iter 38: loss 7.6784, time 5417.46ms, mfu 7.74%
+iter 39: loss 7.5220, time 5412.94ms, mfu 7.74%
+step 40: train loss 7.4691, val loss 7.4560
+saving checkpoint to out
+iter 40: loss 7.4714, time 46172.89ms, mfu 7.06%
+iter 41: loss 7.4396, time 5338.61ms, mfu 7.15%
+iter 42: loss 7.4499, time 5364.27ms, mfu 7.22%
+iter 43: loss 7.3194, time 5395.06ms, mfu 7.28%
+iter 44: loss 7.3311, time 5411.55ms, mfu 7.34%
+iter 45: loss 7.1865, time 5441.97ms, mfu 7.38%
+iter 46: loss 7.1607, time 5440.38ms, mfu 7.42%
+iter 47: loss 7.1015, time 5456.59ms, mfu 7.45%
+iter 48: loss 7.2601, time 5458.04ms, mfu 7.48%
+iter 49: loss 7.0968, time 5461.00ms, mfu 7.51%
+iter 50: loss 7.0822, time 5456.46ms, mfu 7.53%
+iter 51: loss 6.9445, time 5459.22ms, mfu 7.55%
+iter 52: loss 6.9463, time 5455.19ms, mfu 7.57%
+iter 53: loss 7.0053, time 5439.20ms, mfu 7.59%
+iter 54: loss 6.8992, time 5437.14ms, mfu 7.61%
+iter 55: loss 6.9203, time 5436.21ms, mfu 7.63%
+iter 56: loss 7.0250, time 5441.56ms, mfu 7.64%
+iter 57: loss 6.8728, time 5436.48ms, mfu 7.66%
+iter 58: loss 6.8308, time 5439.01ms, mfu 7.67%
+iter 59: loss 6.9075, time 5440.14ms, mfu 7.68%
+step 60: train loss 6.7926, val loss 6.7778
+saving checkpoint to out
+iter 60: loss 6.7963, time 47024.12ms, mfu 7.00%
+iter 61: loss 6.7589, time 5438.79ms, mfu 7.08%
+iter 62: loss 6.6794, time 5437.47ms, mfu 7.15%
+iter 63: loss 6.7035, time 5439.59ms, mfu 7.21%
+iter 64: loss 6.6233, time 5440.89ms, mfu 7.27%
+iter 65: loss 6.6251, time 5455.92ms, mfu 7.32%
+iter 66: loss 6.6593, time 5459.20ms, mfu 7.36%
+iter 67: loss 6.6189, time 5458.54ms, mfu 7.40%
+iter 68: loss 6.5836, time 5458.86ms, mfu 7.43%
+iter 69: loss 6.5395, time 5460.38ms, mfu 7.46%
+iter 70: loss 6.5845, time 5456.75ms, mfu 7.49%
+iter 71: loss 6.5353, time 5459.20ms, mfu 7.52%
+iter 72: loss 6.4276, time 5457.85ms, mfu 7.54%
+iter 73: loss 6.4863, time 5457.10ms, mfu 7.56%
+iter 74: loss 6.3486, time 5458.65ms, mfu 7.58%
+iter 75: loss 6.3603, time 5458.99ms, mfu 7.60%
+Traceback (most recent call last):
+  File "/teamspace/studios/this_studio/gippity/train.py", line 302, in <module>
+    logits, loss = model(X, Y)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 489, in _fn
+    return fn(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/teamspace/studios/this_studio/gippity/model.py", line 170, in forward
+    def forward(self, idx, targets=None):
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 489, in _fn
+    return fn(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 17, in inner
+    return fn(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 901, in forward
+    return compiled_fn(full_args)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 81, in g
+    return f(*args)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 83, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 105, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 81, in g
+    return f(*args)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/autograd/function.py", line 553, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/jit_compile_runtime_wrappers.py", line 408, in forward
+    fw_outs = call_func_at_runtime_with_args(
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 105, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 864, in __call__
+    return self.get_current_callable()(inputs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 611, in run
+    return model(new_inputs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 892, in _run_from_cache
+    return compiled_graph.compiled_artifact(inputs)
+  File "/tmp/torchinductor_zeus/fm/cfmh4kxy7k2eor7lfx4kwmmpb5sqtofbexv5flpfpfouhjmlczyd.py", line 876, in call
+    triton_per_fused__to_copy_add_native_layer_norm_view_4.run(buf20, buf1, buf16, primals_2, buf17, buf22, 32768, 512, grid=grid(32768), stream=stream0)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_inductor/triton_heuristics.py", line 568, in run
+    return launcher(
+  File "<string>", line 8, in launcher
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/teamspace/studios/this_studio/gippity/train.py", line 302, in <module>
+    logits, loss = model(X, Y)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 489, in _fn
+    return fn(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/teamspace/studios/this_studio/gippity/model.py", line 170, in forward
+    def forward(self, idx, targets=None):
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 489, in _fn
+    return fn(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 17, in inner
+    return fn(*args, **kwargs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 901, in forward
+    return compiled_fn(full_args)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 81, in g
+    return f(*args)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 83, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 105, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 81, in g
+    return f(*args)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/autograd/function.py", line 553, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/jit_compile_runtime_wrappers.py", line 408, in forward
+    fw_outs = call_func_at_runtime_with_args(
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 105, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 864, in __call__
+    return self.get_current_callable()(inputs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_inductor/compile_fx.py", line 611, in run
+    return model(new_inputs)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_inductor/codecache.py", line 892, in _run_from_cache
+    return compiled_graph.compiled_artifact(inputs)
+  File "/tmp/torchinductor_zeus/fm/cfmh4kxy7k2eor7lfx4kwmmpb5sqtofbexv5flpfpfouhjmlczyd.py", line 876, in call
+    triton_per_fused__to_copy_add_native_layer_norm_view_4.run(buf20, buf1, buf16, primals_2, buf17, buf22, 32768, 512, grid=grid(32768), stream=stream0)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/torch/_inductor/triton_heuristics.py", line 568, in run
+    return launcher(
+  File "<string>", line 8, in launcher
+KeyboardInterrupt
