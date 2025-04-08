@@ -26,6 +26,29 @@ class LayerNorm(nn.Module):
     def forward(self, input):
         return F.layer_norm(input, self.weight.shape, self.weight, self.bias, 1e-5)
 
+class RotaryPositionalEmbedding(nn.Module):
+    def __init__(self, config):
+        super().__init__()
+        dim = config.n_embd // config.n_head
+        inv_freq = 1. / (10_000 ** (torch.arange(0, dim, 2) / dim).float())
+        pos = torch.arange(config.block_size, dtype=torch.float32)
+        pos_theta = torch.einsum('n,d->nd', pos, inv_freq)
+        pos_theta_repeated = torch.repeat_interleave(pos_theta, 2, dim=-1)
+        # Cache both cos and sin values
+        self.register_buffer('cos_cache', pos_theta_repeated.cos()[None, None, :, :])
+        self.register_buffer('sin_cache', pos_theta_repeated.sin()[None, None, :, :])
+        
+    def forward(self, x):
+        B, nh, T, hs = x.shape
+        # x_c = x.clone() # clone to avoid inplace operations
+        x_c = torch.empty_like(x)
+        x_c[..., ::2] = x[..., ::2]
+        x_c[..., 1::2] = -x[..., 1::2] # negate numbers in even indices
+        # (B, nh, T, hs) -> (B*nh*T*hs / 2, 2) -> flip the last dim -> (B, nh, T, hs)
+        x_c = x_c.contiguous().view(-1, 2).flip(dims=[1]).view(B, nh, T, hs) # tensor yoga explained above
+        return x * self.cos_cache[..., :T, :] + x_c * self.sin_cache[..., :T, :] # element wise mul
+
+
 class CausalSelfAttention(nn.Module):
 
     def __init__(self, config):
@@ -41,6 +64,7 @@ class CausalSelfAttention(nn.Module):
         self.n_head = config.n_head
         self.n_embd = config.n_embd
         self.dropout = config.dropout
+        self.rope = RotaryPositionalEmbedding(config)
         # flash attention make GPU go brrrrr but support is only in PyTorch >= 2.0
         self.flash = hasattr(torch.nn.functional, 'scaled_dot_product_attention')
         if not self.flash:
@@ -57,6 +81,10 @@ class CausalSelfAttention(nn.Module):
         k = k.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, nh, T, hs)
         q = q.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, nh, T, hs)
         v = v.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, nh, T, hs)
+
+        # apply rotary positional embedding
+        q = self.rope(q)
+        k = self.rope(k)
 
         # causal self-attention; Self-attend: (B, nh, T, hs) x (B, nh, hs, T) -> (B, nh, T, T)
         if self.flash:
@@ -125,7 +153,7 @@ class GPT(nn.Module):
 
         self.transformer = nn.ModuleDict(dict(
             wte = nn.Embedding(config.vocab_size, config.n_embd),
-            wpe = nn.Embedding(config.block_size, config.n_embd),
+            # wpe = nn.Embedding(config.block_size, config.n_embd),
             drop = nn.Dropout(config.dropout),
             h = nn.ModuleList([Block(config) for _ in range(config.n_layer)]),
             ln_f = LayerNorm(config.n_embd, bias=config.bias),
@@ -155,8 +183,8 @@ class GPT(nn.Module):
         params are actually used as weights in the final layer, so we include them.
         """
         n_params = sum(p.numel() for p in self.parameters())
-        if non_embedding:
-            n_params -= self.transformer.wpe.weight.numel()
+        # if non_embedding:
+        #     n_params -= self.transformer.wpe.weight.numel()
         return n_params
 
     def _init_weights(self, module):
@@ -175,8 +203,9 @@ class GPT(nn.Module):
 
         # forward the GPT model itself
         tok_emb = self.transformer.wte(idx) # token embeddings of shape (b, t, n_embd)
-        pos_emb = self.transformer.wpe(pos) # position embeddings of shape (t, n_embd)
-        x = self.transformer.drop(tok_emb + pos_emb)
+        # pos_emb = self.transformer.wpe(pos) # position embeddings of shape (t, n_embd)
+        # x = self.transformer.drop(tok_emb + pos_emb)
+        x = self.transformer.drop(tok_emb)
         for block in self.transformer.h:
             x = block(x)
         x = self.transformer.ln_f(x)
@@ -198,7 +227,7 @@ class GPT(nn.Module):
         # but want to use a smaller block size for some smaller, simpler model
         assert block_size <= self.config.block_size
         self.config.block_size = block_size
-        self.transformer.wpe.weight = nn.Parameter(self.transformer.wpe.weight[:block_size])
+        # self.transformer.wpe.weight = nn.Parameter(self.transformer.wpe.weight[:block_size])
         for block in self.transformer.h:
             if hasattr(block.attn, 'bias'):
                 block.attn.bias = block.attn.bias[:,:,:block_size,:block_size]
