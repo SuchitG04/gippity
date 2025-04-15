@@ -1,0 +1,16 @@
+{"time":"2025-04-12T15:13:44.877105966Z","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/teamspace/studios/this_studio/gippity/wandb/run-20250412_151344-ysitmtuv/logs/debug-core.log"}
+{"time":"2025-04-12T15:13:44.984986317Z","level":"INFO","msg":"created new stream","id":"ysitmtuv"}
+{"time":"2025-04-12T15:13:44.985313765Z","level":"INFO","msg":"stream: started","id":"ysitmtuv"}
+{"time":"2025-04-12T15:13:44.986282501Z","level":"INFO","msg":"handler: started","stream_id":"ysitmtuv"}
+{"time":"2025-04-12T15:13:44.986753554Z","level":"INFO","msg":"writer: Do: started","stream_id":"ysitmtuv"}
+{"time":"2025-04-12T15:13:44.987423574Z","level":"INFO","msg":"sender: started","stream_id":"ysitmtuv"}
+{"time":"2025-04-12T15:13:45.199183403Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-12T16:10:33.161460038Z","level":"INFO","msg":"api: retrying HTTP error","status":429,"url":"https://api.wandb.ai/files/suchitg04/gippity/ysitmtuv/file_stream","body":"{\"error\":\"rate limit exceeded\"}"}
+{"time":"2025-04-12T18:09:58.869739799Z","level":"INFO","msg":"stream: closing","id":"ysitmtuv"}
+{"time":"2025-04-12T18:09:58.870081331Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-12T18:09:58.871566627Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-12T18:09:59.168974469Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-12T18:09:59.226394693Z","level":"INFO","msg":"handler: closed","stream_id":"ysitmtuv"}
+{"time":"2025-04-12T18:09:59.226441633Z","level":"INFO","msg":"writer: Close: closed","stream_id":"ysitmtuv"}
+{"time":"2025-04-12T18:09:59.226483591Z","level":"INFO","msg":"sender: closed","stream_id":"ysitmtuv"}
+{"time":"2025-04-12T18:09:59.226562374Z","level":"INFO","msg":"stream: closed","id":"ysitmtuv"}

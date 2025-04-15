@@ -25,8 +25,28 @@ class LayerNorm(nn.Module):
 
     def forward(self, input):
         return F.layer_norm(input, self.weight.shape, self.weight, self.bias, 1e-5)
+    
+
+class Reference_RMSNorm(nn.Module):
+    def __init__(self, dim, eps=None):
+        super().__init__()
+        self.eps = eps
+        self.dim = dim
+        self.gamma = nn.Parameter(torch.ones(dim))
+
+    def _norm(self, x):
+        if self.eps is not None:
+            return x * torch.rsqrt(x.pow(2).mean(dim=-1, keepdim=True) + self.eps)
+        else:
+            return x * torch.rsqrt(x.pow(2).mean(dim=-1, keepdim=True))
+
+    def forward(self, x):
+        return self._norm(x) * self.gamma
+
 
 class RotaryPositionalEmbedding(nn.Module):
+    """ Rotary Positional Embedding implementation for transformers. """
+
     def __init__(self, config):
         super().__init__()
         dim = config.n_embd // config.n_head
@@ -123,14 +143,17 @@ class Block(nn.Module):
 
     def __init__(self, config):
         super().__init__()
-        self.ln_1 = LayerNorm(config.n_embd, bias=config.bias)
+        # nn.RMSNorm is available in torch >= 2.6.0
+        # NOTE: obviously, elementwise_affine=True (default) does NOT add trainable bias terms consistent with the original implementation
+        # (for my understanding)
+        self.attn_norm = nn.RMSNorm(config.n_embd, eps=1e-6) 
         self.attn = CausalSelfAttention(config)
-        self.ln_2 = LayerNorm(config.n_embd, bias=config.bias)
+        self.mlp_norm = nn.RMSNorm(config.n_embd, eps=1e-6)
         self.mlp = MLP(config)
 
     def forward(self, x):
-        x = x + self.attn(self.ln_1(x))
-        x = x + self.mlp(self.ln_2(x))
+        x = x + self.attn(self.attn_norm(x))
+        x = x + self.mlp(self.mlp_norm(x))
         return x
 
 @dataclass
@@ -153,10 +176,9 @@ class GPT(nn.Module):
 
         self.transformer = nn.ModuleDict(dict(
             wte = nn.Embedding(config.vocab_size, config.n_embd),
-            # wpe = nn.Embedding(config.block_size, config.n_embd),
             drop = nn.Dropout(config.dropout),
             h = nn.ModuleList([Block(config) for _ in range(config.n_layer)]),
-            ln_f = LayerNorm(config.n_embd, bias=config.bias),
+            ln_f = nn.RMSNorm(config.n_embd, eps=1e-6),
         ))
         self.lm_head = nn.Linear(config.n_embd, config.vocab_size, bias=False)
         # with weight tying when using torch.compile() some warnings get generated:
@@ -203,8 +225,6 @@ class GPT(nn.Module):
 
         # forward the GPT model itself
         tok_emb = self.transformer.wte(idx) # token embeddings of shape (b, t, n_embd)
-        # pos_emb = self.transformer.wpe(pos) # position embeddings of shape (t, n_embd)
-        # x = self.transformer.drop(tok_emb + pos_emb)
         x = self.transformer.drop(tok_emb)
         for block in self.transformer.h:
             x = block(x)

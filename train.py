@@ -40,13 +40,13 @@ eval_only = False # if True, script exits right after the first eval
 always_save_checkpoint = True # if True, always save a checkpoint after each eval
 init_from = 'scratch' # 'scratch' or 'resume' or 'gpt2*'
 # wandb logging
-wandb_log = False # disabled by default
+wandb_log = True # disabled by default
 wandb_project = 'gippity'
-wandb_run_name = 'gippity-chinchilla-baseline' # 'run' + str(time.time())
+wandb_run_name = 'gippity-rope-rmsnorm' # 'run' + str(time.time())
 # data
 dataset = 'fineweb'
-gradient_accumulation_steps = 16 # used to simulate larger batch sizes
-batch_size = 32 # if gradient_accumulation_steps > 1, this is the micro-batch size
+gradient_accumulation_steps = 8 # used to simulate larger batch sizes
+batch_size = 64 # if gradient_accumulation_steps > 1, this is the micro-batch size
 block_size = 1024
 # model
 n_layer = 6

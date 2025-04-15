@@ -1,0 +1,23 @@
+2025-04-12 15:13:44,859 INFO    MainThread:37495 [wandb_setup.py:_flush():67] Current SDK version is 0.19.8
+2025-04-12 15:13:44,860 INFO    MainThread:37495 [wandb_setup.py:_flush():67] Configure stats pid to 37495
+2025-04-12 15:13:44,860 INFO    MainThread:37495 [wandb_setup.py:_flush():67] Loading settings from /teamspace/studios/this_studio/.config/wandb/settings
+2025-04-12 15:13:44,860 INFO    MainThread:37495 [wandb_setup.py:_flush():67] Loading settings from /teamspace/studios/this_studio/gippity/wandb/settings
+2025-04-12 15:13:44,860 INFO    MainThread:37495 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-04-12 15:13:44,860 INFO    MainThread:37495 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /teamspace/studios/this_studio/gippity/wandb/run-20250412_151344-ysitmtuv/logs/debug.log
+2025-04-12 15:13:44,860 INFO    MainThread:37495 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /teamspace/studios/this_studio/gippity/wandb/run-20250412_151344-ysitmtuv/logs/debug-internal.log
+2025-04-12 15:13:44,860 INFO    MainThread:37495 [wandb_init.py:init():761] calling init triggers
+2025-04-12 15:13:44,860 INFO    MainThread:37495 [wandb_init.py:init():766] wandb.init called with sweep_config: {}
+config: {'out_dir': 'out', 'eval_interval': 40, 'log_interval': 1, 'eval_iters': 50, 'eval_only': False, 'always_save_checkpoint': True, 'init_from': 'scratch', 'wandb_log': True, 'wandb_project': 'gippity', 'wandb_run_name': 'gippity-rope-rmsnorm', 'dataset': 'fineweb', 'gradient_accumulation_steps': 8, 'batch_size': 64, 'block_size': 1024, 'n_layer': 6, 'n_head': 8, 'n_embd': 512, 'dropout': 0.0, 'bias': False, 'learning_rate': 0.0006, 'max_iters': 2000, 'weight_decay': 0.1, 'beta1': 0.9, 'beta2': 0.95, 'grad_clip': 1.0, 'decay_lr': True, 'warmup_iters': 100, 'lr_decay_iters': 2000, 'min_lr': 6e-05, 'backend': 'nccl', 'device': 'cuda', 'dtype': 'bfloat16', 'compile': True, '_wandb': {}}
+2025-04-12 15:13:44,861 INFO    MainThread:37495 [wandb_init.py:init():784] starting backend
+2025-04-12 15:13:44,861 INFO    MainThread:37495 [wandb_init.py:init():788] sending inform_init request
+2025-04-12 15:13:44,867 INFO    MainThread:37495 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-12 15:13:44,867 INFO    MainThread:37495 [wandb_init.py:init():798] backend started and connected
+2025-04-12 15:13:44,869 INFO    MainThread:37495 [wandb_init.py:init():891] updated telemetry
+2025-04-12 15:13:44,879 INFO    MainThread:37495 [wandb_init.py:init():915] communicating run to backend with 90.0 second timeout
+2025-04-12 15:13:45,194 INFO    MainThread:37495 [wandb_init.py:init():990] starting run threads in backend
+2025-04-12 15:13:45,481 INFO    MainThread:37495 [wandb_run.py:_console_start():2375] atexit reg
+2025-04-12 15:13:45,481 INFO    MainThread:37495 [wandb_run.py:_redirect():2227] redirect: wrap_raw
+2025-04-12 15:13:45,481 INFO    MainThread:37495 [wandb_run.py:_redirect():2292] Wrapping output streams.
+2025-04-12 15:13:45,481 INFO    MainThread:37495 [wandb_run.py:_redirect():2315] Redirects installed.
+2025-04-12 15:13:45,484 INFO    MainThread:37495 [wandb_init.py:init():1032] run started, returning control to user process
+2025-04-12 18:09:58,867 INFO    MsgRouterThr:37495 [mailbox.py:close():129] Closing mailbox, abandoning 1 handles.
