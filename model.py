@@ -123,19 +123,36 @@ class CausalSelfAttention(nn.Module):
         y = self.resid_dropout(self.c_proj(y))
         return y
 
+
+class SwiGLU(nn.Module):
+    
+    def __init__(self, input_dim, hidden_dim, bias=False):
+        super().__init__()
+        self.W = nn.Linear(input_dim, hidden_dim, bias=bias)
+        self.V = nn.Linear(input_dim, hidden_dim, bias=bias)
+        
+    def forward(self, x):
+        return F.silu(self.W(x)) * self.V(x)
+
+
 class MLP(nn.Module):
 
     def __init__(self, config):
         super().__init__()
-        self.c_fc    = nn.Linear(config.n_embd, 4 * config.n_embd, bias=config.bias)
-        self.gelu    = nn.GELU()
-        self.c_proj  = nn.Linear(4 * config.n_embd, config.n_embd, bias=config.bias)
+        self.swiglu = SwiGLU(
+            config.n_embd,
+            int(2/3 * 4 * config.n_embd),
+            config.bias
+        )
+        self.linear = nn.Linear(
+            int(2/3 * 4 * config.n_embd),
+            config.n_embd,
+            bias=config.bias
+        )
         self.dropout = nn.Dropout(config.dropout)
 
     def forward(self, x):
-        x = self.c_fc(x)
-        x = self.gelu(x)
-        x = self.c_proj(x)
+        x = self.linear(self.swiglu(x))
         x = self.dropout(x)
         return x
 

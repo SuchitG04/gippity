@@ -42,7 +42,7 @@ init_from = 'scratch' # 'scratch' or 'resume' or 'gpt2*'
 # wandb logging
 wandb_log = True # disabled by default
 wandb_project = 'gippity'
-wandb_run_name = 'gippity-rope-rmsnorm' # 'run' + str(time.time())
+wandb_run_name = 'gippity-swiglu' # 'run' + str(time.time())
 # data
 dataset = 'fineweb'
 gradient_accumulation_steps = 8 # used to simulate larger batch sizes
